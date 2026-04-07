@@ -1,0 +1,229 @@
+/* components/layout/Header.module.css */
+
+.header {
+  background-color: var(--color-primary);
+  height: var(--header-height);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ── 좌측 ── */
+.left {
+  display: flex;
+  align-items: center;
+  min-width: 140px;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+  color: var(--color-text-white);
+}
+
+.menuButton:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.menuButton:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+.menuLabel {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-white);
+  white-space: nowrap;
+}
+
+/* ── 중앙 로고 ── */
+.logo {
+  font-family: var(--font-logo);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--color-text-white);
+  letter-spacing: 0.02em;
+  text-align: center;
+  flex: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── 우측 ── */
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 140px;
+}
+
+.notifWrapper {
+  position: relative;
+}
+
+.notifButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+  color: var(--color-text-white);
+}
+
+.notifButton:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.notifButton:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+.notifLabel {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-white);
+}
+
+.notifIconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.notifCount {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #e85c45;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ── 알림 드롭다운 ── */
+.notifOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 149;
+}
+
+.notifDropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 320px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+  z-index: 150;
+  overflow: hidden;
+  animation: dropdownIn 0.2s ease;
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notifHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border-light);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.notifBadge {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.notifList {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notifItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: background-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.notifItem:last-child {
+  border-bottom: none;
+}
+
+.notifItem:hover {
+  background-color: var(--color-primary-subtle);
+}
+
+.notifUnread {
+  background-color: rgba(172, 115, 65, 0.04);
+}
+
+.notifDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.notifItem:not(.notifUnread) .notifDot {
+  background: var(--color-border);
+}
+
+.notifItem p {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.notifEmpty {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}

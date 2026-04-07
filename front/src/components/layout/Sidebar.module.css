@@ -1,0 +1,188 @@
+/* components/layout/Sidebar.module.css */
+
+.sidebar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background-color: var(--color-primary);
+  color: var(--color-text-white);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform var(--transition-base);
+  z-index: 90;
+  overflow-y: auto;
+  padding-bottom: var(--spacing-lg);
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+/* ── 상단 버튼 ── */
+.sidebarTop {
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.newNoteBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 10px var(--spacing-md);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  color: var(--color-text-white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.newNoteBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.newNoteBtn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+.plusIcon {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+/* ── 내비 ── */
+.nav {
+  flex: 1;
+  padding: var(--spacing-sm) 0;
+}
+
+.navSection {
+  padding: var(--spacing-md) 0 var(--spacing-sm);
+}
+
+.navSectionTitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 0 var(--spacing-md) var(--spacing-xs);
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.projectItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: 9px var(--spacing-md);
+  border-radius: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  cursor: pointer;
+}
+
+.projectItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-white);
+}
+
+.projectItem:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: -2px;
+}
+
+.projectItemActive {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: var(--color-text-white);
+  font-weight: 600;
+}
+
+.projectTitle {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+/* ── 상태 도트 ── */
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statusTodo    { background: #b0a090; }
+.statusProgress { background: #f5c27a; }
+.statusReview  { background: #e8a87c; }
+.statusDone    { background: #88c38a; }
+.statusHold    { background: #b0a090; opacity: 0.6; }
+
+/* ── 범례 ── */
+.legend {
+  margin: auto var(--spacing-md) 0;
+  padding: var(--spacing-md);
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legendLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 전체보기 버튼 (navSectionTitle 내부) */
+.navSectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.viewAllBtn {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.viewAllBtn:hover {
+  color: white;
+  background: rgba(255,255,255,0.12);
+}

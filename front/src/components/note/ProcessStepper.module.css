@@ -1,0 +1,106 @@
+/* components/note/ProcessStepper.module.css */
+
+.stepper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  padding: var(--spacing-lg) var(--spacing-md);
+  overflow-x: auto;
+}
+
+.stepWrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 80px;
+}
+
+/* 연결선 */
+.connector {
+  flex: 1;
+  height: 2px;
+  background: var(--color-border);
+  margin-top: -22px; /* 원 중앙 정렬 */
+  transition: background-color var(--transition-base);
+}
+
+.connectorActive {
+  background: var(--color-primary-light);
+}
+
+/* 스텝 노드 */
+.stepNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* 원형 버튼 */
+.stepCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.stepCircle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.stepCircle:disabled {
+  cursor: default;
+}
+
+/* 상태별 스타일 */
+.stepDone {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  color: white;
+}
+
+.stepCurrent {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(172, 115, 65, 0.2);
+  transform: scale(1.08);
+}
+
+.stepUpcoming {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+}
+
+/* 라벨 */
+.stepLabel {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-align: center;
+  white-space: pre-line;
+  line-height: 1.3;
+  font-family: var(--font-body);
+  font-weight: 500;
+  max-width: 60px;
+}
+
+.stepLabelCurrent {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.stepLabelDone {
+  color: var(--color-primary-light);
+}

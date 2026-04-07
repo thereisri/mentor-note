@@ -1,0 +1,48 @@
+/* components/common/Badge.module.css */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* Sizes */
+.sm {
+  font-size: 11px;
+  padding: 2px 8px;
+}
+.md {
+  font-size: 12px;
+  padding: 3px 10px;
+}
+.lg {
+  font-size: 13px;
+  padding: 4px 14px;
+}
+
+/* Variants */
+.todo {
+  background: #f0ece8;
+  color: #7a6355;
+}
+.inProgress {
+  background: #fef3e7;
+  color: #ac7341;
+}
+.review {
+  background: #fde8d5;
+  color: #8a5a30;
+}
+.done {
+  background: #e6f0e6;
+  color: #4a7a49;
+}
+.onHold {
+  background: #ede9e5;
+  color: #9d8072;
+}

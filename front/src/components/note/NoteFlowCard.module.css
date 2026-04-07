@@ -1,0 +1,76 @@
+/* components/note/NoteFlowCard.module.css */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 110px;
+  background: white;
+  border: 2px solid var(--color-border);
+  border-radius: 8px 8px 6px 6px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  overflow: visible;
+  position: relative;
+  font-family: var(--font-body);
+}
+
+.card:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.cardActive {
+  border-color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  box-shadow: 0 0 0 3px rgba(172, 115, 65, 0.15), var(--shadow-md);
+}
+
+/* 리본 행 — 카드 상단 우측 정렬 */
+.ribbonRow {
+  position: absolute;
+  top: -2px;
+  right: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* 카드 본체: 아이콘 + 제목 */
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 10px 12px;
+  gap: 8px;
+}
+
+/* 노트 아이콘 */
+.noteIcon {
+  width: 52px;
+  height: 58px;
+  flex-shrink: 0;
+}
+
+/* 카드 제목 */
+.cardTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  line-height: 1.35;
+  word-break: keep-all;
+  white-space: pre-wrap;
+}
+
+.cardActive .cardTitle {
+  color: var(--color-primary-dark);
+}

@@ -1,0 +1,115 @@
+/* pages/HomePage.module.css */
+
+/* ── 공통 섹션 내부 ── */
+.sectionInner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 clamp(var(--spacing-lg), 5vw, 60px);
+}
+
+/* ── 진행 중인 프로젝트 ── */
+.projectsSection {
+  padding: var(--spacing-3xl) 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl);
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.viewAllBtn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: none;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.viewAllBtn:hover {
+  opacity: 0.75;
+}
+
+/* 카드 그리드 */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.cardWrapper {
+  animation: fadeInUp 0.45s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── 피처 배너 ── */
+.featureBanner {
+  padding: var(--spacing-3xl) 0;
+  background: linear-gradient(135deg, #fdf6f0 0%, #fffafa 100%);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.bannerTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  gap: var(--spacing-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.featureCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.featureIcon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.featureCardTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-top: var(--spacing-xs);
+}
+
+.featureCardDesc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}

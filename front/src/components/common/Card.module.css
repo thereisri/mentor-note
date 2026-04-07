@@ -1,0 +1,28 @@
+/* components/common/Card.module.css */
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  text-align: left;
+  width: 100%;
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+}
+
+.hoverable {
+  cursor: pointer;
+}
+
+.hoverable:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.hoverable:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

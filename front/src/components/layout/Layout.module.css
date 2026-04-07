@@ -1,0 +1,35 @@
+/* components/layout/Layout.module.css */
+
+.appWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  top: var(--header-height);
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 80;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.main {
+  flex: 1;
+  margin-top: var(--header-height);
+  transition: margin-left var(--transition-base);
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* 데스크톱에서 사이드바 열리면 main 밀기 */
+@media (min-width: 1024px) {
+  .mainShifted {
+    margin-left: var(--sidebar-width);
+  }
+}

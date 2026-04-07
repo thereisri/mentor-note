@@ -1,0 +1,174 @@
+/* components/note/NoteForm.module.css */
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl) clamp(var(--spacing-lg), 5vw, 60px) var(--spacing-3xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  animation: fadeUp 0.35s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 헤더 */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pageTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* 2컬럼 */
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+/* 필드 */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.input {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(172,115,65,0.1);
+}
+
+.input::placeholder { color: var(--color-text-muted); }
+
+.inputErr { border-color: #e05252; }
+.errMsg { font-size: 12px; color: #e05252; }
+
+.textarea {
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  resize: vertical;
+  line-height: 1.7;
+  outline: none;
+  transition: border-color var(--transition-fast);
+  min-height: 180px;
+}
+
+.textarea:focus { border-color: var(--color-primary); }
+.textarea::placeholder { color: var(--color-text-muted); }
+
+/* 추가 요소 */
+.extraSection { display: flex; flex-direction: column; gap: var(--spacing-md); }
+
+.extraTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.tabList { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tabBtn {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 5px 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tabBtn:hover {
+  border-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.tabBtnActive {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.tabPanel {
+  animation: fadeUp 0.2s ease;
+}
+
+/* 액션 버튼 */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.deleteBtn {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.deleteBtn:hover { border-color: #e05252; color: #e05252; background: #fff5f5; }
+
+.saveBtn {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 28px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(172,115,65,0.3);
+  transition: all var(--transition-fast);
+}
+
+.saveBtn:hover { background: var(--color-primary-dark); transform: translateY(-1px); }
+.saveBtn:active { transform: translateY(0); }
+
+@media (max-width: 600px) {
+  .twoCol { grid-template-columns: 1fr; }
+}

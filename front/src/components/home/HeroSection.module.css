@@ -1,0 +1,140 @@
+/* components/home/HeroSection.module.css */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 6vw, 100px);
+  padding: var(--spacing-3xl) clamp(var(--spacing-lg), 6vw, 80px);
+  overflow: hidden;
+}
+
+/* 배경 장식 원 */
+.bgDecor1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(172, 115, 65, 0.06) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.bgDecor2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(172, 115, 65, 0.05) 0%, transparent 70%);
+  bottom: -60px;
+  left: 20px;
+  pointer-events: none;
+}
+
+/* ── 일러스트 영역 ── */
+.illustrationCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: fadeInLeft 0.7s ease forwards;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── 텍스트 영역 ── */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  max-width: 460px;
+  animation: fadeInRight 0.7s ease 0.15s both;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* 헤드카피 */
+.heading {
+  font-family: var(--font-handwriting);
+  font-weight: 700;
+  line-height: 1.18;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.headingLine {
+  font-size: clamp(44px, 5.5vw, 64px);
+  color: var(--color-text-primary);
+  display: block;
+}
+
+.headingLineAccent {
+  font-size: clamp(44px, 5.5vw, 64px);
+  color: var(--color-primary);
+  display: block;
+}
+
+/* 서브텍스트 */
+.subtext {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-top: -8px;
+}
+
+/* CTA 버튼 그룹 */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.ctaButton {
+  font-family: var(--font-script) !important;
+  font-size: 22px !important;
+  letter-spacing: -0.05em !important;
+  padding: 14px 28px !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.learnBtn {
+  font-size: 15px !important;
+  color: var(--color-text-muted) !important;
+  font-weight: 500 !important;
+}
+
+.learnBtn:hover {
+  color: var(--color-primary) !important;
+  background: transparent !important;
+}
+
+/* ── 반응형 ── */
+@media (max-width: 860px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    gap: var(--spacing-2xl);
+  }
+
+  .contentCol {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .ctaGroup {
+    justify-content: center;
+  }
+}

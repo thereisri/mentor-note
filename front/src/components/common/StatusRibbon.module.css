@@ -1,0 +1,31 @@
+/* components/common/StatusRibbon.module.css */
+
+.ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 7px 8px 5px;
+  border-radius: 4px 4px 0 0;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+  min-width: 40px;
+  justify-content: center;
+}
+
+.ribbonIcon {
+  width: 9px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.ribbonLabel {
+  line-height: 1;
+}
+
+.ribbonDone { background: #6a8c69; }
+.ribbonWait { background: #b0a090; }
+.ribbonRun  { background: #c4915e; }
