@@ -3,9 +3,10 @@
 // - 좌측: 팀워크 일러스트
 // - 우측: 헤드카피 + CTA 버튼
 
-import HeroIllustration from './HeroIllustration';
 import Button from '../common/Button';
 import styles from './HeroSection.module.css';
+import mainIcon from '../../assets/icons/team.svg';
+
 
 export default function HeroSection({ onCreateNote }) {
   return (
@@ -15,8 +16,8 @@ export default function HeroSection({ onCreateNote }) {
       <div className={styles.bgDecor2} aria-hidden="true" />
 
       {/* 좌측 일러스트 */}
-      <div className={styles.illustrationCol}>
-        <HeroIllustration />
+      <div className={styles.illustrcontentColationCol}>
+        <img src={mainIcon} />
       </div>
 
       {/* 우측 텍스트 + CTA */}
@@ -41,9 +42,6 @@ export default function HeroSection({ onCreateNote }) {
             className={styles.ctaButton}
           >
             새 노트 생성 하기
-          </Button>
-          <Button variant="ghost" size="lg" className={styles.learnBtn}>
-            더 알아보기 →
           </Button>
         </div>
       </div>

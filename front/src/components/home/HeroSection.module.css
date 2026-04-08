@@ -39,8 +39,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  animation: fadeInLeft 0.7s ease forwards;
+  width: 500px;
+  height: 500px;
 }
 
 @keyframes fadeInLeft {
@@ -65,21 +65,21 @@
 /* 헤드카피 */
 .heading {
   font-family: var(--font-handwriting);
-  font-weight: 700;
-  line-height: 1.18;
+  font-weight: 650;
+  line-height: 1.2;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .headingLine {
-  font-size: clamp(44px, 5.5vw, 64px);
+  font-size: clamp(40px, 2.5vw, 4px);
   color: var(--color-text-primary);
   display: block;
 }
 
 .headingLineAccent {
-  font-size: clamp(44px, 5.5vw, 64px);
+  font-size: clamp(40px, 2.5vw, 64px);
   color: var(--color-primary);
   display: block;
 }
@@ -103,9 +103,9 @@
 
 .ctaButton {
   font-family: var(--font-script) !important;
-  font-size: 22px !important;
+  font-size: 20px !important;
   letter-spacing: -0.05em !important;
-  padding: 14px 28px !important;
+  padding: 12px 25px !important;
   border-radius: var(--radius-md) !important;
 }
 

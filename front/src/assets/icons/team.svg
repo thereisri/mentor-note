@@ -1,0 +1,39 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" fill="none"/>
+
+  <!-- cute hand-drawn circle of 4 characters -->
+  <g stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+
+    <!-- heads (rounder & cuter) -->
+    <circle cx="128" cy="48" r="18"/>
+    <circle cx="208" cy="128" r="18"/>
+    <circle cx="128" cy="208" r="18"/>
+    <circle cx="48" cy="128" r="18"/>
+
+    <!-- arms (soft curves forming circle) -->
+    <path d="M128 66 Q160 90 190 128"/>
+    <path d="M190 128 Q160 166 128 190"/>
+    <path d="M128 190 Q96 166 66 128"/>
+    <path d="M66 128 Q96 90 128 66"/>
+  </g>
+
+  <!-- faces (simple cute dots) -->
+  <g fill="#000000">
+    <!-- top -->
+    <circle cx="122" cy="46" r="2.5"/>
+    <circle cx="134" cy="46" r="2.5"/>
+
+    <!-- right -->
+    <circle cx="202" cy="126" r="2.5"/>
+    <circle cx="214" cy="126" r="2.5"/>
+
+    <!-- bottom -->
+    <circle cx="122" cy="206" r="2.5"/>
+    <circle cx="134" cy="206" r="2.5"/>
+
+    <!-- left -->
+    <circle cx="42" cy="126" r="2.5"/>
+    <circle cx="54" cy="126" r="2.5"/>
+  </g>
+
+</svg>
